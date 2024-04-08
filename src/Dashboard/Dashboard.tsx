@@ -1,7 +1,9 @@
+import { ErrorBoundary } from 'react-error-boundary';
+
 import BuggyCard from '../BuggyCard';
 import Card from '../Card';
+
 import './Dashboard.css';
-import { ErrorBoundary } from 'react-error-boundary';
 
 function Dashboard() {
   return (
@@ -9,17 +11,7 @@ function Dashboard() {
       <Card />
       <Card />
       <ErrorBoundary
-        fallback={
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Oops! This card crashed
-          </div>
-        }
+        fallback={<div className='fallbackUI'>Oops! This card crashed</div>}
       >
         <BuggyCard />
       </ErrorBoundary>
@@ -29,20 +21,11 @@ function Dashboard() {
       <Card />
       <Card />
       <ErrorBoundary
-        fallback={
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Oops! This card crashed
-          </div>
-        }
+        fallback={<div className='fallbackUI'>Oops! This card crashed</div>}
       >
         <BuggyCard />
       </ErrorBoundary>
+      <Card />
     </div>
   );
 }
