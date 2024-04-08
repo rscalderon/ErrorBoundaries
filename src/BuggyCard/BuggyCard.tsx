@@ -15,8 +15,11 @@ function BuggyCard() {
               ],
             },
           ]}
-          width={400}
-          height={200}
+          width={250}
+          height={150}
+          onItemClick={() => {
+            throw new Error('I broke in a different way');
+          }}
         />
       </div>
     </>
